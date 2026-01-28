@@ -8,7 +8,7 @@ const PORT = 3001
 
 app.use(cors())
 
-const dataPath = path.join(__dirname, '../data/reviews.json')
+const dataPath = path.join(__dirname, 'data', 'reviews.json')
 
 app.get('/api/reviews', (req, res) => {
     try {
