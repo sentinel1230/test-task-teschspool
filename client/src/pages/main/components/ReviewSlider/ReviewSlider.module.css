@@ -1,0 +1,113 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  background: transparent;
+}
+
+.viewport {
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.slider {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  cursor: grab;
+}
+
+.slider:active {
+  cursor: grabbing;
+}
+
+.left,
+.right {
+  position: absolute;
+  bottom: -80px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  transition: opacity 0.3s;
+}
+
+.btnIcon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.left .btnIcon {
+  background-image: url("../../../../assets/btn-l@3x.png");
+}
+
+.left:hover .btnIcon {
+  background-image: url("../../../../assets/btn-l-h@3x.png");
+}
+
+.right .btnIcon {
+  background-image: url("../../../../assets/btn-r@3x.png");
+}
+
+.right:hover .btnIcon {
+  background-image: url("../../../../assets/btn-r-h@3x.png");
+}
+
+.left {
+  right: 72px;
+}
+
+.right {
+  right: 16px;
+}
+
+@media (max-width: 1024px) {
+  .left {
+    right: 64px;
+  }
+
+  .right {
+    right: 16px;
+  }
+
+  .btnIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .left .btnIcon {
+    background-image: url("../../../../assets/btn-l@2x.png");
+  }
+
+  .left:hover .btnIcon {
+    background-image: url("../../../../assets/btn-l-h@2x.png");
+  }
+
+  .right .btnIcon {
+    background-image: url("../../../../assets/btn-r@2x.png");
+  }
+
+  .right:hover .btnIcon {
+    background-image: url("../../../../assets/btn-r-h@2x.png");
+  }
+}
+
+@media (max-width: 768px) {
+  .left,
+  .right {
+    display: none;
+  }
+
+  .viewport {
+    margin-bottom: 0;
+  }
+
+  .slider {
+    gap: 16px;
+  }
+}
